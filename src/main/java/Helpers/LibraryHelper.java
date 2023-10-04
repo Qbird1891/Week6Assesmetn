@@ -53,10 +53,10 @@ public class LibraryHelper {
 		manager.close();
 	}
 	
-	public Library searchLibraryByName(String name) {
+	public Library searchLibraryByName(String oldnameOfLibrary) {
 		EntityManager manager = factory.createEntityManager();
 		TypedQuery<Library> query = manager.createQuery("SELECT i FROM library AS i WHERE i.nameOfLibrary = :nameOfLibrary", Library.class);
-		query.setParameter("name", name);
+		query.setParameter("nameOfLibrary", oldnameOfLibrary);
 		Library dbEntity = query.getSingleResult();
 		manager.close();
 		return dbEntity;

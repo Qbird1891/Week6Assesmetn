@@ -5,25 +5,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Library database</title>
 </head>
 <body>
-List of all Books and Library's:
+List of Library's:
 	<table>
 		<c:forEach items="${requestScope.allLibrarys}" var="currentlibrary">
 			<tr>
-				<td>${currentlibrary.nameOfLibrary }|</td>
-				<td>${currentlibrary.address }</td>
+				<td>${currentlibrary.nameOfLibrary}|</td>
+				<td>${currentlibrary.address}</td>
 				
 			</tr>
-			<c:forEach items="${currentlibrary.books}" var="currentbooks">
-					<tr>
-						<td>${currentbooks.title }|</td>
-						<td>${currentbooks.author }|</td>
-						<td>${currentbooks.category }</td>
-						<td>${currentbooks.publicationDate }</td>
-					</tr>
-				</c:forEach>
+			
 		</c:forEach>
 	</table>
 	<br />
